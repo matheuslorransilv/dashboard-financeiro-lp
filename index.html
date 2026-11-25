@@ -145,7 +145,9 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .tile .k{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted-2)}
 .tile .v{font-size:26px;font-weight:700;letter-spacing:-.04em;margin:10px 0 4px}
 .tile .d{font-size:13px;color:var(--muted)}
-.tile.saldo{background:var(--grad-btn);border-color:transparent;color:#fff}
+.tile.saldo{grid-column:1/-1;opacity:1;background:var(--grad-btn);border-color:transparent;color:#fff}
+.tile.full{grid-column:1/-1}
+.tile.saldo .v{font-size:40px}
 .tile.saldo .k,.tile.saldo .d{color:#d6e6fd}
 .conta{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink-2);margin-top:10px}
 .pago{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green)}
@@ -276,15 +278,13 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .inc{margin:0;padding:0 0 0 20px;display:grid;gap:14px}
 .inc li{font-size:16.5px;color:var(--ink-2)}
 .inc-card .note{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.price{position:relative;border-radius:32px;border:2px solid var(--blue);background:#fff;box-shadow:0 30px 80px #1846e133;overflow:hidden;text-align:center;padding:0 36px 34px}
-.price .badge{margin:0 -36px 28px;padding:13px;background:var(--grad-btn);color:#fff;font-size:12px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase}
+.price{position:relative;border-radius:32px;border:2px solid var(--blue);background:#fff;box-shadow:0 30px 80px #1846e133;overflow:hidden;text-align:center;padding:40px 36px 36px;display:flex;flex-direction:column;justify-content:center}
 .price .de{margin:0;color:var(--muted-2);font-size:16px}
 .price .val{margin:4px 0 0;font-size:84px;font-weight:700;letter-spacing:-.06em;line-height:1;color:var(--ink)}
 .price .val small{font-size:24px;letter-spacing:0;vertical-align:.95em;margin-right:6px;color:var(--ink-2)}
 .price .val .mes{font-size:20px;letter-spacing:0;color:var(--muted);font-weight:500;margin-left:4px}
 .price .unico{font-size:15px;color:var(--muted);margin:14px 0 0}
 .price .unico b{color:var(--ink)}
-.eco{display:inline-flex;margin-top:16px;padding:8px 14px;border-radius:999px;background:var(--green-soft);color:var(--green);font-size:14px;font-weight:700}
 .price .btn{width:100%;margin-top:26px;white-space:normal;line-height:1.3}
 .mensal{text-align:center;margin:34px 0 0;font-size:16px;color:var(--muted)}
 .mensal a{color:var(--blue);font-weight:700;border-bottom:1px solid #9bcffe;padding-bottom:2px}
@@ -299,7 +299,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
 .steps3 div{padding:18px;border-radius:18px;background:#fff;border:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--muted)}
 .steps3 b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
-.steps3 i{font-style:normal;display:block;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--kicker);margin-bottom:10px}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--bg-soft)}
@@ -400,7 +399,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
   .papel{right:8px;top:96px;width:130px;font-size:12px;padding:12px}
   .linha{grid-template-columns:18px 1fr auto;font-size:12.5px}
   .linha .dt,.linha .cat{display:none}
-  .price{padding:0 22px 28px}.price .badge{margin:0 -22px 24px}
+  .price{padding:30px 22px 28px}
   .price .val{font-size:68px}
   .inc-card{padding:28px}
   .guar{padding:28px 20px}
@@ -410,7 +409,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
   .foot .cols{grid-template-columns:1fr}
   .foot .bottom{flex-direction:column}
   .cron{right:-6px}
-  .tile{padding:15px}.tile .v{font-size:18px}
+  .tile{padding:15px}.tile .v{font-size:18px}.tile.saldo .v{font-size:28px}
   .platform .tag{font-size:12px;padding:9px 12px}.platform .t1{left:-6px}.platform .t2{right:-6px;bottom:4%}
   .wa{right:16px;bottom:16px;width:56px;height:56px}
 }
@@ -495,7 +494,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
           <div class="tile saldo"><div class="k">Disponível agora</div><div class="v" data-conta="6336.48">R$ 0,00</div><div class="d">Saldo em conta</div></div>
           <div class="tile"><div class="k">Gasto no mês</div><div class="v" data-conta="705">R$ 0,00</div><div class="d">Todas as despesas</div></div>
           <div class="tile"><div class="k">Contas do mês</div><div class="conta"><span>Aluguel</span><span class="pago">Pago</span></div><div class="conta"><span>Internet</span><span class="pago">Pago</span></div><div class="conta"><span>Cartão</span><span class="pago pend">Dia 15</span></div></div>
-          <div class="tile"><div class="k">Para onde foi</div><div class="rosca"><span class="dn"></span><ul><li style="--c:var(--blue)">Casa</li><li style="--c:#5eb7ff">Mercado</li><li style="--c:#cfe4fd">Lazer</li></ul></div></div>
+          <div class="tile full"><div class="k">Para onde foi</div><div class="rosca"><span class="dn"></span><ul><li style="--c:var(--blue)">Casa</li><li style="--c:#5eb7ff">Mercado</li><li style="--c:#cfe4fd">Lazer</li></ul></div></div>
         </div>
       </div>
     </div>
@@ -687,11 +686,9 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         <div class="note">Acesso chega no seu e-mail logo após a compra.</div>
       </div>
       <div class="price rv">
-        <div class="badge">+70% de desconto</div>
         <p class="de">de <s>R$29,90/mês</s></p>
         <p class="val"><small>R$</small>7,90<span class="mes">/mês</span></p>
         <p class="unico">pagamento único de <b>R$76,35</b> por 12 meses de acesso</p>
-        <span class="eco">Você economiza R$282,45 no ano</span>
         <a class="btn" href="https://pay.kiwify.com.br/xdxSBKU">Quero meu Dashboard por R$7,90/mês</a>
       </div>
     </div>
@@ -722,9 +719,9 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         <h2>Você tem 7 dias para testar <span class="grad">sem risco.</span></h2>
         <p>Use o Dashboard, importe um extrato e veja o seu mês organizado. Se por qualquer motivo não for para você, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor, sem burocracia.</p>
         <div class="steps3">
-          <div><i>01</i><b>Assine</b>O acesso chega no seu e-mail logo após a compra.</div>
-          <div><i>02</i><b>Use de verdade</b>Lance seus gastos e importe uma fatura.</div>
-          <div><i>03</i><b>Decida em 7 dias</b>Não gostou? Reembolso de 100% do valor.</div>
+          <div><b>Assine</b>O acesso chega no seu e-mail logo após a compra.</div>
+          <div><b>Use de verdade</b>Lance seus gastos e importe uma fatura.</div>
+          <div><b>Decida em 7 dias</b>Não gostou? Reembolso de 100% do valor.</div>
         </div>
       </div>
     </div>

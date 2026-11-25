@@ -4,8 +4,7 @@ const path = require('path');
 const out = process.argv[2] || '.';
 const cenas = [
   ['dash','s=dash'], ['relatorios','s=relatorios'], ['perfis','s=perfis'], ['importacao','s=importacao'],
-  ['phone-prod','s=phone&h=850'], ['phone-aulas','s=phone&h=854'],
-  ['tablet-prod','s=tablet&w=1260&h=801'], ['tablet-aulas','s=tablet&w=1240&h=800'],
+  ['phone-prod','s=phone&h=850'], ['tablet-prod','s=tablet&w=1260&h=801'],
 ];
 (async () => {
   const b = await chromium.launch();

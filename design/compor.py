@@ -34,9 +34,3 @@ for i in range(26):
 b.alpha_composite(sombra, (944, 241))
 tela(b, 'phone-prod', 987, 167, 339, 739, 40)
 b.save(f'{OUT}/produto-azul.webp', quality=92, method=6)
-
-# aulas: celular + tablet sobre o MacBook com o vídeo
-a = Image.open(f'{ORIG}/offer-aulas.webp').convert('RGBA')
-tela(a, 'phone-aulas', 189, 101, 215, 471, 34)
-tela(a, 'tablet-aulas', 858, 516, 392, 253, 10)
-a.save(f'{OUT}/offer-aulas-azul.webp', quality=92, method=6)

@@ -265,32 +265,12 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .entrega h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1.1}
 .entrega p{font-size:16.5px;line-height:1.6;color:var(--muted);margin:14px 0 0}
 .entrega .vis{border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#eef5ff,#f9fcff);border:1px solid var(--line)}
-.extra{display:inline-block;margin-top:18px;padding:8px 14px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-size:13px;font-weight:700}
 
 /* ---------- Depoimentos ---------- */
 .rgrid{columns:3;column-gap:18px}
 .res{break-inside:avoid;margin:0 0 18px;padding:10px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
 .res img{border-radius:16px;width:100%;height:auto}
 
-/* ---------- Criadora ---------- */
-.about .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
-.about h2{font-size:clamp(36px,4.4vw,60px)}
-.about .first{font-size:22px;font-weight:500;color:var(--ink);line-height:1.45;margin:24px 0 16px;letter-spacing:-.01em}
-.about p{font-size:17px;line-height:1.7;color:var(--muted);margin:0 0 14px}
-.creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.creds span{padding:10px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--ink-2);box-shadow:0 6px 18px #2461b80c}
-.wavehand{display:inline-block;animation:hand 2.4s ease-in-out infinite;transform-origin:70% 70%}
-@keyframes hand{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(14deg)}20%,40%{transform:rotate(-8deg)}}
-.retrato{position:relative;aspect-ratio:4/4.6;border-radius:40px;overflow:hidden;background:radial-gradient(80% 60% at 50% 30%,#4f93ff 0%,#1a5ef0 45%,#0735bf 100%)}
-.retrato .orb{position:absolute;width:70%;left:15%;top:8%;opacity:.55;filter:blur(1px)}
-.retrato .ring{position:absolute;inset:12% -20% auto;height:60%;border:1.5px solid #ffffff40;border-radius:50%;transform:rotate(-18deg)}
-.retrato img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:94%;width:auto;max-width:none;filter:drop-shadow(0 20px 40px #0a2a8a55)}
-.retrato .barra{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border-radius:999px;background:#ffffffe6;backdrop-filter:blur(12px);box-shadow:0 14px 34px #0a2a8a40;z-index:2}
-.retrato .barra span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;color:var(--muted)}
-.retrato .barra span.on{background:var(--grad-btn);color:#fff}
-.retrato .barra svg{width:18px;height:18px}
-.retrato .tagc{position:absolute;top:22px;right:22px;padding:10px 14px;border-radius:14px;background:#ffffffe6;font-size:13px;font-weight:700;z-index:2;box-shadow:0 10px 24px #0a2a8a30}
-.retrato .tagc b{color:var(--blue)}
 
 /* ---------- Oferta ---------- */
 .offer{padding:130px 0;background:radial-gradient(60% 55% at 50% 60%,#e1edff 0%,#f4f9ff 50%,#fff 80%)}
@@ -401,7 +381,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 }
 @media (max-width:900px){
   .sec{padding:96px 0}
-  .seg,.cel,.imp,.about .grid,.obox,.faq .grid{grid-template-columns:1fr;gap:40px}
+  .seg,.cel,.imp,.obox,.faq .grid{grid-template-columns:1fr;gap:40px}
   .ba{grid-template-columns:1fr}
   .entrega,.entrega:nth-child(even){grid-template-columns:1fr;padding:28px;gap:24px}
   .entrega:nth-child(even) .vis{order:0}
@@ -415,7 +395,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
   .float small{font-size:10px}.float b{font-size:13px}
   .float .meta{width:90px}
   .f3,.f4{display:none}
-  .about .photo{max-width:460px;margin:0 auto;width:100%}
 }
 @media (max-width:640px){
   .wrap{padding:0 18px}
@@ -702,7 +681,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
       <div class="entrega rv"><div><span class="k">Perfis</span><h3>Múltiplos perfis financeiros</h3><p>Organize a vida pessoal e o negócio sem misturar as contas.</p></div><div class="vis"><img src="assets/img/offer-perfis-azul.webp" alt="Troca entre perfil pessoal e profissional" loading="lazy" width="1300" height="932"></div></div>
       <div class="entrega rv"><div><span class="k">Análise</span><h3>Relatórios, gráficos e metas</h3><p>Veja para onde o dinheiro está indo, acompanhe metas e gere relatórios em PDF.</p></div><div class="vis"><img src="assets/img/offer-relatorios-azul.webp" alt="Gráficos de receitas, despesas e comparativo mensal" loading="lazy" width="1300" height="932"></div></div>
       <div class="entrega rv"><div><span class="k">Importação</span><h3>Extratos e faturas em poucos cliques</h3><p>Chega de lançar tudo à mão: importe, revise e mantenha o controle sempre atualizado.</p></div><div class="vis"><img src="assets/img/offer-importacao-azul.webp" alt="Tela de revisão de lançamentos importados" loading="lazy" width="1300" height="932"></div></div>
-      <div class="entrega rv"><div><span class="k">Aulas</span><h3>Aulas completas de utilização</h3><p>Quer aprender cada função ainda mais rápido? No checkout você pode levar as aulas em vídeo, mostrando cada função na prática.</p><span class="extra">Adicional opcional no checkout</span></div><div class="vis"><img src="assets/img/offer-aulas-azul.webp" alt="Aula de utilização do Dashboard Financeiro" loading="lazy" width="1300" height="898"></div></div>
     </div>
   </div>
 </section>
@@ -721,35 +699,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
       <article class="res rv"><img src="assets/img/depoimento-5.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="756"></article>
       <article class="res rv"><img src="assets/img/depoimento-3.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="168"></article>
       <article class="res rv"><img src="assets/img/depoimento-6.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="498"></article>
-    </div>
-  </div>
-</section>
-
-<!-- Quem criou -->
-<section class="sec about" id="criadora">
-  <div class="wrap grid">
-    <div class="rv">
-      <p class="kicker">Quem criou</p>
-      <h2>Opa, eu sou a <span class="grad">Lari</span> <span class="wavehand">👋</span></h2>
-      <p class="first">Designer especialista em marcas e criadora do Dashboard Financeiro.</p>
-      <p>Criei o Dashboard com o mesmo cuidado que coloco em cada projeto de marca: tudo pensado para ser claro, bonito e rápido de usar no dia a dia.</p>
-      <p>A ideia é simples: você abre, entende onde está o seu dinheiro e volta para a sua vida.</p>
-      <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>+800 alunos</span></div>
-    </div>
-    <div class="photo rv">
-      <div class="retrato">
-        <div class="ring" aria-hidden="true"></div>
-        <div class="orb" aria-hidden="true"></div>
-        <span class="tagc">Criadora do <b>Dashboard</b></span>
-        <img src="assets/img/lari-recorte.webp" alt="Lari Tedeschi" loading="lazy" width="720" height="947">
-        <div class="barra" aria-hidden="true">
-          <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 4"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
-        </div>
-      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!--
+  Fonte das imagens da LP. Cada cena é aberta com ?s=<cena> e capturada pelo script render.js.
+  Cenas: dash, relatorios, perfis, importacao, phone, tablet
+-->
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+<style>
+:root{--ink:#0d1630;--ink2:#24334f;--muted:#6b7a93;--muted2:#8a98b2;--blue:#0869f5;--soft:#edf4ff;--line:#e4ecf8;--grad:linear-gradient(155deg,#6ba6ff 0%,#2868ef 48%,#0735bf 100%);--green:#17a35b;--coral:#f0647a;--light:#8fbcff}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{font-family:Satoshi,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+#scene{position:relative;overflow:hidden}
+.app{background:radial-gradient(70% 60% at 85% 0%,#e3efff 0%,transparent 60%),#f7fbff}
+.orb{width:40px;height:40px;flex:none;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;background:radial-gradient(circle at 34% 28%,#ffffffd9 0 6%,transparent 20%),radial-gradient(circle at 70% 78%,#9fd0ff 0,transparent 40%),radial-gradient(circle at 40% 45%,#2a7bff 0,#0b4fe6 45%,#0631b5 75%,#1f65f0 100%);box-shadow:inset -5px -6px 12px #04249a90,inset 4px 5px 10px #ffffff70,0 8px 18px #1a5ef040;position:relative}
+.orb::before{content:"";position:absolute;inset:-8%;border-radius:inherit;border:1px solid #ffffffb0;transform:rotate(18deg)}
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.brand h1{font-size:21px;font-weight:700;letter-spacing:-.03em}
+.brand h1 b{color:var(--blue)}
+.brand p{font-size:13px;color:var(--muted);margin-top:2px}
+.ham{width:36px;height:36px;border-radius:11px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.ham i{display:block;width:14px;height:2px;background:var(--ink2);border-radius:2px;box-shadow:0 -5px 0 var(--ink2),0 5px 0 var(--ink2)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:9px 10px 9px 12px;border-radius:16px;background:#ffffffcc;border:1px solid var(--line);box-shadow:0 8px 22px #2461b80d}
+.bar .l{display:flex;align-items:center;gap:10px}
+.sel{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:700}
+.pic{width:16px;height:16px;border-radius:5px;background:var(--soft);display:grid;place-items:center;flex:none}
+.pic::before{content:"";width:8px;height:7px;border:1.6px solid var(--blue);border-radius:2px}
+.pic.star{background:#fff4dc}.pic.star::before{border:0;width:9px;height:9px;background:#f5a623;clip-path:polygon(50% 0,63% 35%,100% 38%,71% 60%,80% 100%,50% 78%,20% 100%,29% 60%,0 38%,37% 35%)}
+.car{font-size:9px;color:var(--muted)}
+.ok{display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:#e7f8ee;color:var(--green);font-size:12px;font-weight:700}
+.ok::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+.btn{padding:9px 16px;border-radius:12px;background:var(--grad);color:#fff;font-size:13px;font-weight:700;box-shadow:0 8px 18px #397cfa40;white-space:nowrap}
+.tip{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-radius:18px;background:var(--grad);color:#fff;box-shadow:0 14px 30px #1a5ef033}
+.tip::after{content:"";position:absolute;right:220px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px solid #ffffff30}
+.tip .l{display:flex;align-items:center;gap:14px}
+.tag{padding:5px 10px;border-radius:999px;background:#ffffff26;font-size:10px;font-weight:700;letter-spacing:2px;flex:none}
+.tip b{display:block;font-size:15px;letter-spacing:-.01em}
+.tip .s{display:block;font-size:12.5px;color:#dbe8ff;margin-top:2px}
+.tip .s strong{color:#fff}
+.tip .r{display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+.wbtn{padding:8px 14px;border-radius:11px;background:#fff;color:var(--blue);font-size:13px;font-weight:700;white-space:nowrap}
+.x{width:26px;height:26px;border-radius:50%;background:#ffffff26;display:grid;place-items:center;font-size:12px;flex:none}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border-radius:16px;background:#ffffffe6;border:1px solid var(--line)}
+.nav .l{display:flex;align-items:center;gap:10px;font-size:13px}
+.arw{color:var(--muted);padding:0 6px;font-size:15px}
+.drop{display:flex;align-items:center;gap:20px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:500;justify-content:space-between}
+.drop::after{content:"⌄";color:var(--muted);margin-top:-6px}
+.seg{display:flex;gap:4px;padding:4px;border-radius:12px;background:var(--soft)}
+.seg span{padding:6px 14px;border-radius:9px;font-size:12.5px;font-weight:700;color:var(--muted)}
+.seg span.on{background:var(--grad);color:#fff;box-shadow:0 6px 14px #397cfa40}
+.kpis{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr 1fr;gap:12px}
+.kpi{position:relative;padding:15px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px #2461b80f;min-height:118px}
+.kpi .k{font-size:12px;font-weight:700;color:var(--muted)}
+.kpi .v{font-size:23px;font-weight:700;letter-spacing:-.035em;margin-top:16px;white-space:nowrap}
+.kpi .d{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+.kpi .d.g{color:var(--green);font-weight:700}
+.kpi .i{position:absolute;right:14px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:var(--soft);color:var(--blue)}
+.kpi .i svg{width:15px;height:15px}
+.kpi.main{background:var(--grad);border-color:transparent;color:#fff;overflow:hidden;box-shadow:0 16px 34px #1a5ef040}
+.kpi.main::after{content:"";position:absolute;right:-50px;bottom:-70px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,#ffffff30,transparent 65%)}
+.kpi.main .k,.kpi.main .d{color:#dbe8ff}
+.kpi.main .v{font-size:27px}
+.kpi.main .i{background:#ffffff26;color:#fff}
+.meta{height:6px;border-radius:9px;background:var(--soft);margin-top:9px;overflow:hidden}
+.meta i{display:block;height:100%;background:var(--grad);border-radius:9px}
+.row{display:grid;grid-template-columns:1.72fr 1fr;gap:12px}
+.card{padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px #2461b80f;display:flex;flex-direction:column}
+.card .h{display:flex;justify-content:space-between;align-items:center}
+.card .h b{font-size:14.5px;letter-spacing:-.01em}
+.card .h small{font-size:11.5px;color:var(--muted2)}
+.pill{font-size:11.5px;padding:5px 10px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);font-weight:500}
+.leg{display:flex;justify-content:center;gap:16px;font-size:11.5px;color:var(--muted);margin-top:8px;font-weight:500}
+.leg span{display:flex;align-items:center;gap:6px}
+.leg i{width:9px;height:9px;border-radius:3px;background:var(--c)}
+.chart{flex:1;position:relative;min-height:0}
+.chart svg{position:absolute;inset:0;width:100%;height:100%}
+svg text{font-family:Satoshi,sans-serif}
+.donut{flex:1;display:flex;align-items:center;justify-content:center;gap:26px}
+.dleg{display:grid;gap:14px;font-size:12.5px}
+.dleg div{display:flex;flex-direction:column;gap:2px}
+.dleg b{display:flex;align-items:center;gap:7px;font-size:12.5px}
+.dleg b i{width:9px;height:9px;border-radius:3px;background:var(--c)}
+.dleg span{color:var(--muted);padding-left:16px;font-size:12px}
+.dleg strong{padding-left:16px;font-size:15px;letter-spacing:-.02em}
+.tabs{display:flex;gap:6px;padding:7px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.tabs span{padding:8px 14px;border-radius:10px;font-size:13px;font-weight:500;color:var(--muted)}
+.tabs span.on{background:var(--soft);color:var(--blue);font-weight:700}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+/* janela dos cards de oferta (1300x932, janela em 91,80 com 1118x772) */
+.win{position:absolute;left:91px;top:80px;width:1118px;height:772px;border-radius:40px;overflow:hidden;border:1px solid #e3ecf9;box-shadow:0 0 0 1px #ffffff inset}
+.win .in{width:1280px;transform-origin:0 0;transform:scale(.8734);padding:32px 32px 0}
+
+/* celular */
+.status{display:flex;justify-content:space-between;align-items:center;padding:18px 30px 0 34px;font-size:16px;font-weight:700;height:54px}
+.island{position:absolute;left:50%;top:12px;width:122px;height:36px;border-radius:20px;background:#000;transform:translateX(-50%)}
+.sig{display:flex;align-items:center;gap:6px}
+.sig .bars{display:flex;gap:2px;align-items:flex-end;height:12px}.sig .bars i{width:3px;background:var(--ink);border-radius:1px}
+.sig .bat{width:26px;height:13px;border-radius:4px;border:1.5px solid var(--ink);position:relative;padding:1.5px}.sig .bat i{display:block;height:100%;width:70%;background:var(--ink);border-radius:2px}
+.phone{padding:0 14px}
+.phone .stack{gap:10px}
+.phone .brand h1{font-size:19px}
+.phone .kpi{min-height:0;padding:15px 16px}
+.phone .kpi .v{font-size:22px;margin-top:14px}
+.phone .kpi.main .v{font-size:25px}
+.fab{position:absolute;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:30px;font-weight:400;box-shadow:0 14px 30px #1a5ef060}
+
+/* perfis (zoom) */
+.dd{position:absolute;width:300px;padding:8px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 24px 50px #1b4fa82e}
+.dd .o{display:flex;align-items:center;gap:12px;padding:12px 12px;border-radius:12px;font-size:15px;font-weight:500}
+.dd .o.on{background:var(--soft);color:var(--blue);font-weight:700}
+.dd .o.on::after{content:"✓";margin-left:auto;font-weight:700}
+.dd hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+.dd .add{color:var(--blue);font-weight:700}
+.dd .mng{color:var(--muted)}
+
+/* importação */
+.modal{position:absolute;left:66px;top:32px;width:1200px;height:900px;border-radius:30px;background:#fff;box-shadow:-20px 0 60px #0d16302a;padding:44px 40px}
+.modal h2{font-size:26px;letter-spacing:-.03em}
+.modal .sub{font-size:17px;color:var(--muted);margin-top:8px;line-height:1.45}
+.modal .sub b{color:var(--ink2)}
+.acts{display:flex;gap:10px;margin-top:26px;padding:12px;border-radius:18px;border:1px solid var(--line);background:#fbfdff}
+.ghost{padding:10px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:16px;font-weight:500;color:var(--ink2)}
+.mass{margin-top:16px;padding:16px;border-radius:18px;border:1.5px solid #9cc4ff;background:linear-gradient(180deg,#f2f7ff,#eaf2ff);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mass .lb{font-size:16.5px;font-weight:700;color:var(--blue)}
+.fsel{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:16px;min-width:200px}
+.fsel::after{content:"⌄";color:var(--muted);margin-top:-6px}
+.fbtn{padding:11px 18px;border-radius:12px;background:var(--grad);color:#fff;font-size:16px;font-weight:700;box-shadow:0 8px 18px #397cfa40}
+.tbl{margin-top:16px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tr{display:grid;grid-template-columns:54px 200px 250px 240px 1fr;gap:16px;align-items:center;padding:10px 16px;border-top:1px solid var(--line);font-size:16px}
+.tr.th{border-top:0;background:#f7fbff;font-size:12.5px;font-weight:700;letter-spacing:2.4px;color:var(--muted2);padding:14px 16px}
+.cb{width:22px;height:22px;border-radius:7px;border:1.6px solid #c6d5ec;display:grid;place-items:center}
+.cb.on{background:var(--grad);border-color:transparent;color:#fff;font-size:13px;font-weight:700}
+.fld{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;white-space:nowrap;overflow:hidden;display:flex;justify-content:space-between;align-items:center}
+.fld.c::after{content:"⌄";color:var(--muted);margin-top:-6px}
+.fld .cal{width:15px;height:15px;border:1.8px solid var(--ink2);border-radius:3px;border-top-width:4px}
+.badge{font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px;display:inline-block}
+</style>
+</head>
+<body>
+<div id="scene"></div>
+<script>
+const P = new URLSearchParams(location.search);
+const S = P.get('s') || 'dash';
+const brl = v => 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const ic = {
+  card:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16 15h2"/></svg>',
+  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
+  alvo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>'
+};
+const top_ = () => `<div class="top"><div class="brand"><div class="orb"></div><div><h1><b>Meu Dashboard</b> Financeiro</h1><p>Olá, Larissa!</p></div></div><div class="ham"><i></i></div></div>`;
+const bar_ = (btn=true) => `<div class="bar"><div class="l"><span class="sel"><span class="pic"></span>Profissional <span class="car">▼</span></span><span class="ok">Salvo</span></div>${btn?'<span class="btn">+ Novo lançamento</span>':''}</div>`;
+const tip_ = (pdf=true) => `<div class="tip"><div class="l"><span class="tag">DICA</span><div><b>Tudo salvo automaticamente, Larissa!</b><span class="s">Só lançamentos marcados como <strong>Pagos</strong> entram no saldo da sua conta.</span></div></div><div class="r">${pdf?'<span class="wbtn">Gerar PDF do mês</span>':''}<span class="x">✕</span></div></div>`;
+const nav_ = (mes,ano) => `<div class="nav"><div class="l"><span class="arw">‹</span><span class="drop">${mes}</span><span class="drop">${ano}</span><span class="arw">›</span></div><div class="seg"><span class="on">Mensal</span><span>Anual</span></div></div>`;
+const kpis_ = k => `<div class="kpis">
+  <div class="kpi main"><div class="k">Saldo em conta agora</div><div class="v">${k[0][0]}</div><div class="d">${k[0][1]}</div><span class="i">${ic.card}</span></div>
+  <div class="kpi"><div class="k">Receitas</div><div class="v">${k[1][0]}</div><div class="d">${k[1][1]}</div><span class="i" style="background:#e7f8ee;color:#17a35b">${ic.up}</span></div>
+  <div class="kpi"><div class="k">Despesas</div><div class="v">${k[2][0]}</div><div class="d">${k[2][1]}</div><span class="i" style="background:#ffeef0;color:#e0485f">${ic.down}</span></div>
+  <div class="kpi"><div class="k">Lucro</div><div class="v">${k[3][0]}</div><div class="d g">${k[3][1]}</div><span class="i">${ic.star}</span></div>
+  <div class="kpi"><div class="k">Meta do mês</div><div class="v">${k[4][0]}</div><div class="meta"><i style="width:${k[4][2]}%"></i></div><div class="d">${k[4][1]}</div><span class="i">${ic.alvo}</span></div>
+</div>`;
+const card_ = (titulo, dir, corpo, h) => `<div class="card" style="height:${h}px"><div class="h"><b>${titulo}</b>${dir}</div>${corpo}</div>`;
+const legenda = itens => `<div class="leg">${itens.map(([n,c])=>`<span style="--c:${c}"><i></i>${n}</span>`).join('')}</div>`;
+const donut_ = (fatias, total, lista) => {
+  const r=72, C=2*Math.PI*r; let off=0, arcs='';
+  fatias.forEach(([p,c])=>{ const len=C*p-(fatias.length>1?4:0); arcs+=`<circle cx="95" cy="95" r="${r}" fill="none" stroke="${c}" stroke-width="26" stroke-dasharray="${len} ${C}" stroke-dashoffset="${-off}" transform="rotate(-90 95 95)"/>`; off+=C*p; });
+  return `<div class="donut"><svg width="190" height="190" viewBox="0 0 190 190"><defs><linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ba6ff"/><stop offset=".5" stop-color="#2868ef"/><stop offset="1" stop-color="#0735bf"/></linearGradient></defs><circle cx="95" cy="95" r="${r}" fill="none" stroke="#edf4ff" stroke-width="26"/>${arcs}<text x="95" y="90" text-anchor="middle" font-size="11" fill="#8a98b2" font-weight="500">Total</text><text x="95" y="110" text-anchor="middle" font-size="19" fill="#0d1630" font-weight="700" letter-spacing="-.5">${total}</text></svg><div class="dleg">${lista.map(([n,c,v,p])=>`<div><b style="--c:${c}"><i></i>${n}</b><strong>${v}</strong><span>${p}</span></div>`).join('')}</div></div>`;
+};
+
+// gráficos (desenhados depois do layout)
+const charts = [];
+const lineChart = (id, meses, series, max, step, tip) => { charts.push(()=>{
+  const el=document.getElementById(id), W=el.clientWidth, H=el.clientHeight, L=62, R=24, T=12, B=26;
+  const x=i=>L+i*(W-L-R)/(meses.length-1), y=v=>T+(H-T-B)*(1-v/max);
+  const path=d=>{const p=d.map((v,i)=>[x(i),y(v)]);let s=`M${p[0]}`;for(let i=0;i<p.length-1;i++){const p0=p[i-1]||p[i],p1=p[i],p2=p[i+1],p3=p[i+2]||p2,t=.18;const c1=[p1[0]+(p2[0]-p0[0])*t,Math.min(p1[1]+(p2[1]-p0[1])*t,y(0))],c2=[p2[0]-(p3[0]-p1[0])*t,Math.min(p2[1]-(p3[1]-p1[1])*t,y(0))];s+=` C${c1} ${c2} ${p2}`}return s};
+  let g='<defs>'+series.map((s,k)=>`<linearGradient id="${id}a${k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${s.c}" stop-opacity="${s.a}"/><stop offset="1" stop-color="${s.c}" stop-opacity="0"/></linearGradient>`).join('')+'</defs>';
+  for(let v=0;v<=max;v+=step) g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#edf2fa" ${v?'stroke-dasharray="3 4"':''}/><text x="${L-10}" y="${y(v)+4}" text-anchor="end" font-size="10.5" fill="#8a98b2">R$ ${v.toLocaleString('pt-BR')}</text>`;
+  meses.forEach((m,i)=>g+=`<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="#8a98b2">${m}</text>`);
+  [...series].reverse().forEach((s,k)=>{const k2=series.length-1-k;const p=path(s.d);g+=`<path d="${p} L${x(s.d.length-1)},${y(0)} L${x(0)},${y(0)} Z" fill="url(#${id}a${k2})"/>`});
+  [...series].reverse().forEach(s=>{g+=`<path d="${path(s.d)}" fill="none" stroke="${s.c}" stroke-width="${s.w}" stroke-linecap="round"/>`});
+  [...series].reverse().forEach(s=>s.d.forEach((v,i)=>g+=`<circle cx="${x(i)}" cy="${y(v)}" r="3.8" fill="#fff" stroke="${s.c}" stroke-width="2.2"/>`));
+  if(tip){const [i,v,t1,t2]=tip;g+=`<g transform="translate(${x(i)-122},${y(v)-12})"><rect width="106" height="40" rx="10" fill="#0d1630"/><text x="12" y="16" font-size="10" fill="#9fb3d6">${t1}</text><text x="12" y="31" font-size="13" font-weight="700" fill="#fff">${t2}</text></g>`}
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}">${g}</svg>`;
+});};
+const barChart = (id, meses, series, min, max, step) => { charts.push(()=>{
+  const el=document.getElementById(id), W=el.clientWidth, H=el.clientHeight, L=62, R=14, T=12, B=26;
+  const y=v=>T+(H-T-B)*(1-(v-min)/(max-min)); const cw=(W-L-R)/meses.length, bw=Math.min(9,cw/(series.length+1.6));
+  let g='';
+  for(let v=min;v<=max;v+=step) g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v===0?'#dbe5f4':'#edf2fa'}" ${v?'stroke-dasharray="3 4"':''}/><text x="${L-10}" y="${y(v)+4}" text-anchor="end" font-size="10.5" fill="#8a98b2">R$ ${v.toLocaleString('pt-BR')}</text>`;
+  meses.forEach((m,i)=>{const cx=L+cw*i+cw/2;g+=`<text x="${cx}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="#8a98b2">${m}</text>`;
+    series.forEach((s,k)=>{const v=s.d[i];if(!v)return;const bx=cx+(k-(series.length-1)/2)*(bw+3)-bw/2;const y0=y(0),y1=y(v);g+=`<rect x="${bx}" y="${Math.min(y0,y1)}" width="${bw}" height="${Math.max(2,Math.abs(y1-y0))}" rx="${bw/2.4}" fill="${s.c}"/>`;});});
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}">${g}</svg>`;
+});};
+
+const SC = document.getElementById('scene');
+const C_REC='#0869f5', C_DES='#f0647a', C_LUC='#8fbcff';
+const M1=['Ago/25','Set/25','Out/25','Nov/25','Dez/25','Jan/26','Fev/26','Mar/26','Abr/26','Mai/26','Jun/26','Jul/26'];
+const M2=['Dez/25','Jan/26','Fev/26','Mar/26','Abr/26','Mai/26','Jun/26','Jul/26','Ago/26','Set/26','Out/26','Nov/26'];
+const R2=[0,10000,8000,10000,5000,8500,5800,1600,1000,1000,1000,1000], D2=[0,0,0,0,9000,0,5000,700,0,0,0,0];
+const L2=R2.map((v,i)=>v-D2[i]);
+
+function relatorios(h1,h2){ // conteúdo de relatórios (tablet e card)
+  lineChart('lr', M2, [{d:R2,c:C_REC,a:.26,w:3},{d:D2,c:C_DES,a:.16,w:2.4}], 10000, 2000);
+  barChart('br', M2, [{d:R2,c:C_REC},{d:D2,c:C_DES},{d:L2,c:C_LUC}], -4000, 10000, 2000);
+  return `<div class="stack">
+    ${nav_('Novembro','2026')}
+    <div class="kpis kcut">${['R$ -8.798,72|Outubro 2026: R$ -4.237,06','R$ 1.000,00|+ R$ 135,20 a receber','R$ 0,00|+ R$ 200,00 a pagar','R$ 1.000,00|Resultado positivo','R$ 5.000,00|20% da meta'].map((t,i)=>{const [v,d]=t.split('|');return `<div class="kpi ${i?'':'main'}" style="min-height:0;padding:13px 16px"><div class="v" style="margin:0">${v}</div>${i==4?'<div class="meta"><i style="width:20%"></i></div>':''}<div class="d ${i==3?'g':''}">${d}</div></div>`}).join('')}</div>
+    <div class="row">${card_('Receitas × Despesas','<small>últimos 12 meses</small>',legenda([['Receita',C_REC],['Despesa',C_DES]])+'<div class="chart" id="lr"></div>',h1)}
+      ${card_('Despesas por categoria','<span class="pill">Todas as categorias ⌄</span>',donut_([[1,'#c9dcfb']],'R$ 0',[['Sem dados','#c9dcfb','R$ 0,00','Nenhuma despesa no mês']]),h1)}</div>
+    <div class="row">${card_('Comparativo mensal','<small>receita / despesa / lucro</small>',legenda([['Receita',C_REC],['Despesa',C_DES],['Lucro',C_LUC]])+'<div class="chart" id="br"></div>',h2)}
+      ${card_('Entradas por categoria','<span class="pill">Todas as categorias ⌄</span>',donut_([[1,'url(#gd)']],'R$ 1.000',[['Consultoria','#2868ef','R$ 1.000,00','100%']]),h2)}</div>
+    <div class="tabs"><span class="on">Entradas</span><span>Despesas no débito</span><span>Despesas no crédito</span><span>Metas</span></div>
+  </div>`;
+}
+
+const cenas = {
+  dash(){
+    SC.style.cssText='width:1300px;height:932px';
+    const R1=[0,0,0,0,0,0,0,0,0,0,5800,1666.67], D1=[0,0,0,0,0,0,0,0,0,0,5000,705], L1=R1.map((v,i)=>v-D1[i]);
+    lineChart('l1', M1, [{d:R1,c:C_REC,a:.26,w:3},{d:D1,c:C_DES,a:.16,w:2.4}], 6000, 1000);
+    barChart('b1', M1, [{d:R1,c:C_REC},{d:D1,c:C_DES},{d:L1,c:C_LUC}], 0, 6000, 1000);
+    SC.innerHTML=`<div class="win app"><div class="in"><div class="stack">
+      ${top_()}${bar_()}${nav_('Julho','2026')}
+      ${kpis_([['R$ 201,28','Junho 2026: R$ 801,28'],['R$ 1.666,67','+ R$ 135,20 a receber'],['R$ 705,00','Todas pagas'],['R$ 961,67','Resultado positivo'],['R$ 5.000,00','33% da meta',33]])}
+      <div class="row">${card_('Receitas × Despesas','<small>últimos 12 meses</small>',legenda([['Receita',C_REC],['Despesa',C_DES]])+'<div class="chart" id="l1"></div>',340)}
+        ${card_('Despesas por categoria','<span class="pill">Todas as categorias ⌄</span>',donut_([[.85,'url(#gd)'],[.15,'#9cc4ff']],'R$ 705',[['Marketing','#2868ef','R$ 600,00','85%'],['Ferramentas','#9cc4ff','R$ 105,00','15%']]),340)}</div>
+      <div class="row">${card_('Comparativo mensal','<small>receita / despesa / lucro</small>',legenda([['Receita',C_REC],['Despesa',C_DES],['Lucro',C_LUC]])+'<div class="chart" id="b1"></div>',320)}
+        ${card_('Entradas por categoria','<span class="pill">Todas as categorias ⌄</span>',donut_([[.6,'url(#gd)'],[.4,'#9cc4ff']],'R$ 1.666',[['Serviços','#2868ef','R$ 1.000,00','60%'],['Produtos','#9cc4ff','R$ 666,67','40%']]),320)}</div>
+    </div></div></div>`;
+  },
+  relatorios(){
+    SC.style.cssText='width:1300px;height:932px';
+    SC.innerHTML=`<div class="win app"><div class="in" style="padding-top:18px">${relatorios(330,300)}</div></div>`;
+    // esconde o topo dos kpis por baixo da barra de mês (como na rolagem)
+    const st=document.createElement('style');st.textContent='.kcut{margin-top:-34px;position:relative;z-index:0}.nav{position:relative;z-index:1;background:#fff;box-shadow:0 10px 24px #2461b812}';document.head.appendChild(st);
+  },
+  tablet(){
+    const W=+P.get('w')||1260, H=+P.get('h')||801;
+    SC.style.cssText=`width:${W}px;height:${H}px`;
+    SC.className='app';
+    const k=W/1280;
+    SC.innerHTML=`<div style="width:1280px;transform:scale(${k});transform-origin:0 0;padding:16px 26px">${relatorios(300,292)}</div>`;
+    const st=document.createElement('style');st.textContent='.kcut{margin-top:-34px;position:relative;z-index:0}.nav{position:relative;z-index:1;background:#fff;box-shadow:0 10px 24px #2461b812}';document.head.appendChild(st);
+  },
+  phone(){
+    const W=390, H=+P.get('h')||850;
+    SC.style.cssText=`width:${W}px;height:${H}px`;
+    SC.className='app';
+    SC.innerHTML=`<div class="island"></div>
+      <div class="status"><span>14:57</span><span class="sig"><span class="bars"><i style="height:4px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:12px"></i></span><svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.4 1.4a4.5 4.5 0 0 0-6.4 0zM1 4.4a9.9 9.9 0 0 1 14 0l-1.4 1.4a7.9 7.9 0 0 0-11.2 0z" fill="#0d1630"/></svg><span class="bat"><i></i></span></span></div>
+      <div class="phone"><div class="stack" style="margin-top:14px">
+        ${top_()}${bar_(false)}
+        <div class="tip" style="align-items:flex-start;padding:14px 14px"><div class="l" style="align-items:flex-start;gap:10px"><span class="tag">DICA</span><div><b style="font-size:14.5px">Tudo salvo automaticamente, Larissa!</b><span class="s">Só lançamentos marcados como <strong>Pagos</strong> entram no saldo da sua conta.</span></div></div><span class="x">✕</span></div>
+        <div class="nav"><div class="l" style="gap:6px"><span class="arw">‹</span><span class="drop">Julho</span><span class="drop">2026</span><span class="arw">›</span></div><span class="drop" style="font-size:13px">Mensal</span></div>
+        <div class="kpi main"><div class="k">Saldo em conta agora</div><div class="v">R$ 6.336,48</div><div class="d">Junho 2026: R$ -8.198,72</div><span class="i">${ic.card}</span></div>
+        <div class="kpi"><div class="k">Receitas</div><div class="v">R$ 16.801,87</div><div class="d">Julho 2026</div><span class="i" style="background:#e7f8ee;color:#17a35b">${ic.up}</span></div>
+        <div class="kpi"><div class="k">Despesas</div><div class="v">R$ 705,00</div><div class="d">Todas pagas</div><span class="i" style="background:#ffeef0;color:#e0485f">${ic.down}</span></div>
+        <div class="kpi"><div class="k">Lucro</div><div class="v">R$ 16.096,87</div><div class="d g">Resultado positivo</div><span class="i">${ic.star}</span></div>
+      </div></div><div class="fab">+</div>`;
+  },
+  perfis(){
+    SC.style.cssText='width:1300px;height:932px';
+    SC.innerHTML=`<div class="win app"><div style="width:520px;transform:scale(2.2);transform-origin:0 0;padding:20px 0 0 48px;position:relative">
+      <div style="width:620px" class="stack">${top_().replace('<div class="ham"><i></i></div>','')}${bar_(false)}${tip_(false)}${nav_('Julho','2026')}<div class="kpis" style="grid-template-columns:1fr 1fr"><div class="kpi main"></div><div class="kpi"></div></div></div>
+      <div class="dd" style="left:66px;top:118px;width:250px">
+        <div class="o"><span class="pic star"></span>Pessoal</div>
+        <div class="o on"><span class="pic"></span>Profissional</div>
+        <hr><div class="o add">+ Novo perfil financeiro</div><div class="o mng">⚙ Gerenciar perfis financeiros</div>
+      </div></div></div>`;
+  },
+  importacao(){
+    SC.style.cssText='width:1300px;height:932px';
+    const linhas=[[1,'01/06/2026','Transferência recebida','Despesa crédito'],[1,'01/06/2026','Transferência Recebida','Despesa crédito'],[1,'02/06/2026','Transferência recebida','Despesa crédito'],[0,'02/06/2026','Pagamento de fatura','Entrada']];
+    SC.innerHTML=`<div class="win app">
+      <div style="position:absolute;inset:0;filter:blur(7px);opacity:.75;transform:scale(1.02)"><div style="width:1280px;transform:scale(.8734);transform-origin:0 0;padding:32px"><div class="stack">${top_()}${bar_()}${tip_()}${nav_('Julho','2026')}${kpis_([['R$ 6.336,48',''],['R$ 16.801,87',''],['R$ 705,00',''],['R$ 16.096,87',''],['R$ 5.000,00','',100]])}</div></div></div>
+      <div style="position:absolute;inset:0;background:#0d163024"></div>
+      <div class="modal">
+        <h2>Revisar lançamentos (32)</h2>
+        <p class="sub">A IA tentou identificar <b>entradas e saídas</b> pelo sinal do valor, mas você ajusta o tipo e a categoria de cada lançamento antes de salvar no perfil <b>Profissional</b>.</p>
+        <div class="acts"><span class="ghost">✓ Marcar todos</span><span class="ghost">✕ Desmarcar todos</span></div>
+        <div class="mass"><span class="lb">Em massa (nas linhas marcadas):</span><span class="fsel">Despesa crédito</span><span class="fbtn">Aplicar tipo</span><span style="width:1px;height:28px;background:#c6d5ec"></span><span class="fsel">Outros</span><span class="fbtn">Aplicar em entradas</span></div>
+        <div class="tbl"><div class="tr th"><span></span><span>DATA</span><span>DESCRIÇÃO</span><span>TIPO</span><span>CATEGORIA</span></div>
+          ${linhas.map(([on,d,ds,t])=>`<div class="tr"><span class="cb ${on?'on':''}">${on?'✓':''}</span><span class="fld">${d}<i class="cal"></i></span><span class="fld">${ds}</span><span class="fld c">${t}</span><span class="fld c">Outros</span></div>`).join('')}
+        </div>
+      </div></div>`;
+  }
+};
+cenas[S]();
+document.fonts.ready.then(()=>{ charts.forEach(f=>f()); document.body.dataset.pronto=1; });
+</script>
+</body>
+</html>

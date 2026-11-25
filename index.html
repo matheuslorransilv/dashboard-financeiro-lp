@@ -59,7 +59,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 section{position:relative}
 
 /* ---------- Tipografia ---------- */
-.kicker{display:inline-flex;align-items:center;gap:12px;font-size:11px!important;font-weight:700;letter-spacing:4px;line-height:1.4!important;text-transform:uppercase;color:var(--kicker)!important;margin:0 0 22px!important;max-width:none!important}
 h1,h2,h3{margin:0;font-weight:700;color:var(--ink)}
 h2{font-size:clamp(34px,4.4vw,62px);line-height:1.04;letter-spacing:-.045em}
 h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
@@ -102,7 +101,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .hero .sub{font-size:21px;line-height:1.6;color:var(--muted);max-width:700px;margin:30px auto 0}
 .hero .sub strong{color:var(--ink);font-weight:700}
 .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.credit{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 0 0;font-size:13px;color:#6a7282}
 
 .stage{position:relative;max-width:1080px;margin:80px auto 0;padding:0 40px}
 .stage .mac{position:relative;width:100%;height:auto;filter:drop-shadow(0 40px 60px #0d2a6a2a)}
@@ -122,7 +120,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fact{display:flex;gap:18px;padding:28px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
 .fact:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.fact .ic svg{width:21px;height:21px;stroke:currentColor}
 .fact .k{font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--kicker)}
 .fact .v{font-size:20px;font-weight:700;letter-spacing:-.02em;margin:8px 0 6px}
 .fact .d{font-size:15px;line-height:1.55;color:var(--muted)}
@@ -131,11 +128,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .seg{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
 .perg{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .perg li{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:var(--r-md);background:#fff;border:1px solid var(--line);transition:all .4s;cursor:default}
-.perg li .n{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--blue-line);font-size:13px;font-weight:700;color:var(--blue);background:#fff;transition:all .4s}
 .perg li b{display:block;font-size:18px;letter-spacing:-.02em}
-.perg li span:not(.n){display:block;font-size:15px;color:var(--muted);margin-top:4px}
 .perg li.on{border-color:#9bcffe;box-shadow:0 18px 40px #1018281f;transform:translateX(8px)}
-.perg li.on .n{background:var(--grad-btn);color:#fff;border-color:transparent}
 .painel{position:relative;padding:26px;border-radius:32px;background:linear-gradient(180deg,#fff,#f9fafb);border:1px solid var(--line);box-shadow:var(--shadow-lg)}
 .painel .topo{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .painel .dl{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
@@ -180,33 +174,25 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .excel .cur{border:2px solid #1d6fd6}
 .papel{position:absolute;right:20px;top:116px;width:160px;padding:16px;background:#fffbe2;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:14px;line-height:1.5;color:#6b5a2a;transform:rotate(7deg);box-shadow:0 12px 26px #00000018;border-radius:3px;z-index:2}
 .lado.com img{border-radius:16px;border:1px solid var(--line);box-shadow:0 18px 40px #1018281c}
-.frase{text-align:center;margin-top:70px}
-.frase .a{font-size:clamp(26px,3.2vw,42px);font-weight:700;letter-spacing:-.04em;margin:0;line-height:1.15}
-.frase .b{font-size:18px;color:var(--muted);margin:14px 0 0}
 
 /* ---------- Cards grid ---------- */
 .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fcard{padding:30px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
 .fcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.fcard .ic{margin-bottom:22px}
-.fcard .ic svg{width:20px;height:20px;stroke:currentColor}
 .fcard p{font-size:15.5px;line-height:1.6;color:var(--muted);margin:10px 0 0}
 
 /* ---------- Pilares ---------- */
 .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .step{position:relative;padding:30px 26px 32px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
-.step .n{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--blue-line);font-size:12px;font-weight:700;color:var(--blue);margin-bottom:58px}
-.step .big{position:absolute;right:-6px;top:-30px;font-size:150px;font-weight:900;letter-spacing:-.08em;line-height:1;background:linear-gradient(180deg,#e8f3fe,#ffffff00 85%);-webkit-background-clip:text;background-clip:text;color:transparent;pointer-events:none}
 .step p{font-size:15px;line-height:1.6;color:var(--muted);margin:10px 0 0}
 
 /* ---------- Celular ---------- */
 .cel{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
 .cel h2{font-size:clamp(34px,4vw,56px)}
 .cel .txt > p{font-size:19px;line-height:1.6;color:var(--muted);margin:24px 0 30px}
-.lista{list-style:none;padding:0;margin:0;display:grid;gap:14px}
-.lista li{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--ink-2)}
-.chk{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--grad-btn);color:#fff}
-.chk svg{width:12px;height:12px}
+.lista{padding:0 0 0 20px;margin:0;display:grid;gap:12px}
+.lista li::marker,.inc li::marker{color:var(--blue)}
+.lista li{font-size:16px;color:var(--ink-2)}
 .platform{position:relative}
 .platform .frame{position:relative;border-radius:28px;overflow:hidden;background:#ffffffaa;border:1px solid #fff;box-shadow:var(--shadow-lg);backdrop-filter:blur(6px)}
 .platform .tag{position:absolute;z-index:3;padding:12px 16px;border-radius:14px;background:#ffffffee;backdrop-filter:blur(12px);border:1px solid #fff;box-shadow:0 14px 34px #10182822;font-size:14px;font-weight:700;animation:float 7s ease-in-out infinite}
@@ -216,10 +202,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .imp{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center}
 .imp .cards{display:grid;gap:16px}
 .icard{display:flex;gap:18px;padding:26px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
-.icard .ic svg{width:21px;height:21px;stroke:currentColor}
 .icard p{font-size:15px;line-height:1.6;color:var(--muted);margin:8px 0 0}
 .seguro{display:flex;align-items:center;gap:12px;padding:18px 22px;border-radius:var(--r-md);background:var(--blue-soft);color:#0061ae;font-size:15px;line-height:1.5;font-weight:500}
-.seguro svg{flex:none}
 .revisar{padding:26px;border-radius:32px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-lg)}
 .revisar .tt{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
 .revisar .tt b{font-size:18px;letter-spacing:-.02em}
@@ -246,7 +230,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .entrega{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;padding:24px 24px 24px 48px;border-radius:34px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
 .entrega:nth-child(even){grid-template-columns:1.15fr .85fr;padding:24px 48px 24px 24px}
 .entrega:nth-child(even) .vis{order:-1}
-.entrega .k{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--kicker);margin-bottom:14px}
 .entrega h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1.1}
 .entrega p{font-size:16.5px;line-height:1.6;color:var(--muted);margin:14px 0 0}
 .entrega .vis{border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#eef6fe,#f9fafb);border:1px solid var(--line)}
@@ -255,8 +238,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .rgrid{columns:3;column-gap:18px}
 .res{break-inside:avoid;margin:0 0 18px;padding:22px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
 .res .src{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:13px;color:var(--muted)}
-.res .src .ch{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--blue-soft);color:var(--blue);flex:none}
-.res .src .ch svg{width:16px;height:16px}
 .res .src b{color:var(--ink);font-weight:700}
 .res .src time{margin-left:auto;font-size:12px;color:var(--muted-2)}
 .story{position:relative;width:132px;aspect-ratio:9/15.5;border-radius:16px;overflow:hidden;margin:0 0 14px 16px;background:radial-gradient(120% 80% at 50% 0%,#2f6bf0 0%,#1846e1 45%,#0a339e 100%);box-shadow:0 10px 24px #1846e133}
@@ -291,15 +272,13 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .offer{padding:130px 0;background:radial-gradient(60% 55% at 50% 60%,#e8f3fe 0%,#f5f9fe 50%,#fff 80%)}
 .obox{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1040px;margin:0 auto;align-items:stretch}
 .inc-card{padding:40px;border-radius:32px;background:#ffffffcc;backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:var(--shadow)}
-.inc-card .k{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--kicker)}
-.inc-card h3{font-size:28px;letter-spacing:-.04em;margin:12px 0 26px}
-.inc{list-style:none;margin:0;padding:0;display:grid;gap:16px}
-.inc li{display:flex;gap:12px;align-items:center;font-size:16.5px;color:var(--ink-2)}
-.inc-card .note{display:flex;align-items:center;gap:14px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.inc-card h3{font-size:28px;letter-spacing:-.04em;margin:0 0 24px}
+.inc{margin:0;padding:0 0 0 20px;display:grid;gap:14px}
+.inc li{font-size:16.5px;color:var(--ink-2)}
+.inc-card .note{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .price{position:relative;border-radius:32px;border:2px solid var(--blue);background:#fff;box-shadow:0 30px 80px #1846e133;overflow:hidden;text-align:center;padding:0 36px 34px}
 .price .badge{margin:0 -36px 28px;padding:13px;background:var(--grad-btn);color:#fff;font-size:12px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase}
-.price .lbl{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--kicker)}
-.price .de{margin:16px 0 0;color:var(--muted-2);font-size:16px}
+.price .de{margin:0;color:var(--muted-2);font-size:16px}
 .price .val{margin:4px 0 0;font-size:84px;font-weight:700;letter-spacing:-.06em;line-height:1;color:var(--ink)}
 .price .val small{font-size:24px;letter-spacing:0;vertical-align:.95em;margin-right:6px;color:var(--ink-2)}
 .price .val .mes{font-size:20px;letter-spacing:0;color:var(--muted);font-weight:500;margin-left:4px}
@@ -307,12 +286,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .price .unico b{color:var(--ink)}
 .eco{display:inline-flex;margin-top:16px;padding:8px 14px;border-radius:999px;background:var(--green-soft);color:var(--green);font-size:14px;font-weight:700}
 .price .btn{width:100%;margin-top:26px;white-space:normal;line-height:1.3}
-.secure{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13px;color:var(--muted)}
-.secure span{display:inline-flex;align-items:center;gap:6px}
-.secure span+span::before{content:"";width:4px;height:4px;border-radius:50%;background:#c4cad4;margin-right:12px}
 .mensal{text-align:center;margin:34px 0 0;font-size:16px;color:var(--muted)}
 .mensal a{color:var(--blue);font-weight:700;border-bottom:1px solid #9bcffe;padding-bottom:2px}
-.banco{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px auto 0;font-size:14px;color:var(--muted-2);text-align:center}
 
 /* ---------- Garantia ---------- */
 .guar{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center;padding:56px;border-radius:40px;background:linear-gradient(160deg,#f5f9fe,#fff);border:1px solid var(--line);box-shadow:var(--shadow)}
@@ -354,9 +329,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 /* ---------- Encerramento ---------- */
 .closing{padding:140px 0 120px;text-align:center;overflow:hidden}
 .closing h2{font-size:clamp(40px,6vw,84px);max-width:1000px;margin:0 auto}
-.closing p{font-size:19px;line-height:1.6;color:var(--muted);max-width:600px;margin:26px auto 0}
 .closing .btn{margin-top:44px}
-.closing .note{font-size:13px;color:var(--muted-2);margin-top:16px}
 
 /* ---------- Rodapé ---------- */
 .foot{position:relative;overflow:hidden;padding:90px 0 36px;background:linear-gradient(180deg,#fff,var(--bg-soft));border-top:1px solid #eef1f5}
@@ -369,8 +342,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}
 .foot ul a{font-size:15px;color:var(--ink-2);transition:color .2s}
 .foot ul a:hover{color:var(--blue)}
-.foot .cols .inv p{color:var(--ink);font-size:30px;font-weight:500;letter-spacing:-.035em;line-height:1.2;margin:0}
-.foot .inv p span{color:var(--blue)}
 .foot .inv a{display:inline-flex;gap:10px;margin-top:22px;color:var(--blue);font-weight:700}
 .foot .bottom{display:flex;justify-content:space-between;gap:20px;margin-top:70px;padding-top:26px;border-top:1px solid #e5e9f0;font-size:13px;color:var(--muted-2)}
 
@@ -400,7 +371,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
   .entrega:nth-child(even) .vis{order:0}
   .guar{grid-template-columns:1fr;padding:36px;gap:30px;text-align:center}
   .guar .selo{max-width:220px;margin:0 auto}
-  .guar .kicker{justify-content:center}
   .faq .left{position:static}
   .perg li.on{transform:none}
   .float{padding:11px 13px;border-radius:14px;gap:9px}
@@ -471,14 +441,12 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <!-- Abertura -->
 <section class="hero" id="topo">
   <div class="wrap">
-    <p class="kicker rv">Sem planilhas · Sem fórmulas</p>
     <h1 class="rv">Entenda sua vida financeira<br> <span class="grad">em menos de 10&nbsp;segundos.</span></h1>
     <p class="sub rv">Sem planilhas e sem fórmulas. Um painel visual mostra saldo, gastos, receitas, metas e gráficos automaticamente, <strong>no computador ou no celular, por menos de R$8 por mês.</strong></p>
     <div class="ctas rv">
-      <a class="btn" href="#comprar">Quero meu Dashboard <span class="arr">→</span></a>
+      <a class="btn" href="#comprar">Quero meu Dashboard</a>
       <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
     </div>
-    <p class="credit rv">Acesso imediato · 7 dias de garantia · Não conecta ao seu banco</p>
 
     <div class="stage" id="palco">
             <div class="float f1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16 15h2"/></svg></span><span><small>Saldo em conta agora</small><b data-conta="6336.48">R$ 0,00</b></span></div>
@@ -494,16 +462,15 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec" id="resumo">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">O Dashboard em resumo</p>
       <h2>Tudo o que você precisa saber <span class="grad">antes de assinar.</span></h2>
     </div>
     <div class="facts">
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div><div><div class="k">O que é</div><div class="v">Um painel financeiro visual</div><div class="d">Saldo, receitas, despesas, metas e gráficos numa tela só.</div></div></div>
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="11" rx="2"/><path d="M6 19h6"/><rect x="16" y="9" width="6" height="12" rx="1.5"/></svg></div><div><div class="k">Onde</div><div class="v">Computador e celular</div><div class="d">Direto no navegador, com tudo salvo na nuvem.</div></div></div>
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div><div><div class="k">Lançamentos</div><div class="v">Manual ou importado</div><div class="d">Lance em segundos ou importe extratos e faturas e só revise.</div></div></div>
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div><div><div class="k">Perfis</div><div class="v">Pessoal e negócio</div><div class="d">Contas separadas, sem misturar, na mesma assinatura.</div></div></div>
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><div class="k">Segurança</div><div class="v">Não conecta ao seu banco</div><div class="d">Nunca pedimos login, senha ou acesso à sua conta.</div></div></div>
-      <div class="fact rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><div class="k">Garantia</div><div class="v">7 dias</div><div class="d">Não gostou? É só pedir o reembolso, sem burocracia.</div></div></div>
+      <div class="fact rv"><div><div class="k">O que é</div><div class="v">Um painel financeiro visual</div><div class="d">Saldo, receitas, despesas, metas e gráficos numa tela só.</div></div></div>
+      <div class="fact rv"><div><div class="k">Onde</div><div class="v">Computador e celular</div><div class="d">Direto no navegador, com tudo salvo na nuvem.</div></div></div>
+      <div class="fact rv"><div><div class="k">Lançamentos</div><div class="v">Manual ou importado</div><div class="d">Lance em segundos ou importe extratos e faturas e só revise.</div></div></div>
+      <div class="fact rv"><div><div class="k">Perfis</div><div class="v">Pessoal e negócio</div><div class="d">Contas separadas, sem misturar, na mesma assinatura.</div></div></div>
+      <div class="fact rv"><div><div class="k">Segurança</div><div class="v">Não conecta ao seu banco</div><div class="d">Nunca pedimos login, senha ou acesso à sua conta.</div></div></div>
+      <div class="fact rv"><div><div class="k">Garantia</div><div class="v">7 dias</div><div class="d">Não gostou? É só pedir o reembolso, sem burocracia.</div></div></div>
     </div>
   </div>
 </section>
@@ -512,15 +479,14 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec soft" id="como-funciona">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Como funciona</p>
       <h2>Você abre o painel e, em segundos, <span class="grad">já sabe exatamente:</span></h2>
     </div>
     <div class="seg">
       <ol class="perg rv" id="perg">
-        <li data-i="0"><span class="n">1</span><div><b>Quanto você tem disponível agora</b><span>Sem precisar somar nada.</span></div></li>
-        <li data-i="1"><span class="n">2</span><div><b>Quanto já gastou no mês</b><span>Sem procurar em planilha, aba ou caderno.</span></div></li>
-        <li data-i="2"><span class="n">3</span><div><b>Se aquela conta foi paga ou não</b><span>Sem ficar na dúvida.</span></div></li>
-        <li data-i="3"><span class="n">4</span><div><b>Para onde está indo seu dinheiro</b><span>Sem esperar o fim do mês para descobrir.</span></div></li>
+        <li data-i="0"><div><b>Quanto você tem disponível agora</b></div></li>
+        <li data-i="1"><div><b>Quanto já gastou no mês</b></div></li>
+        <li data-i="2"><div><b>Se aquela conta foi paga ou não</b></div></li>
+        <li data-i="3"><div><b>Para onde está indo seu dinheiro</b></div></li>
       </ol>
       <div class="painel rv" id="painel">
         <span class="cron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M10 2h4"/><path class="pt" d="M12 13V8.5"/></svg><span id="seg">0</span>s</span>
@@ -533,7 +499,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         </div>
       </div>
     </div>
-    <div class="ctas rv" style="margin-top:64px"><a class="btn" href="#comprar">Quero essa clareza <span class="arr">→</span></a></div>
+    <div class="ctas rv" style="margin-top:64px"><a class="btn" href="#comprar">Quero essa clareza</a></div>
   </div>
 </section>
 
@@ -541,13 +507,12 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec" id="antes-depois">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Por que o Dashboard existe</p>
       <h2>Você provavelmente já tentou <span class="grad">se organizar mais de uma vez.</span></h2>
       <p>Baixou uma planilha, prometeu que “agora vai”. Funcionou por uns dias, até a primeira fórmula quebrar ou o gasto ficar para depois.</p>
     </div>
     <div class="ba">
       <div class="lado sem rv">
-        <span class="pill">✕ Antes: planilha e caderno</span>
+        <span class="pill">Antes: planilha e caderno</span>
         <div class="excel">
           <table>
             <tr><td></td><td>A</td><td>B</td><td>C</td></tr>
@@ -562,14 +527,10 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         <p>Fórmula quebrada, aba escondida, gasto anotado no papel. <b>Difícil de usar no celular e impossível de manter.</b></p>
       </div>
       <div class="lado com rv">
-        <span class="pill">✓ Depois: Dashboard Financeiro</span>
+        <span class="pill">Depois: Dashboard Financeiro</span>
         <img src="assets/img/offer-dashboard-azul.webp?v=2" alt="Dashboard Financeiro organizado com saldo, receitas, despesas e gráficos" loading="lazy" width="1300" height="932">
         <p>Tudo pronto para usar, salvo na nuvem, com gráficos automáticos. <b>Você entende o mês em segundos, sem fórmula nenhuma.</b></p>
       </div>
-    </div>
-    <div class="frase rv">
-      <p class="a">Não foi falta de disciplina. <span class="grad">Foi ferramenta errada.</span></p>
-      <p class="b">O Dashboard Financeiro nasceu para fazer esse trabalho por você.</p>
     </div>
   </div>
 </section>
@@ -578,16 +539,15 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec soft" id="para-quem">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Para quem é</p>
       <h2>Feito para quem quer controle <span class="grad">sem complicação.</span></h2>
     </div>
     <div class="fgrid">
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem anota no caderno ou no papel</h3><p>E perde a folha, esquece de lançar ou não sabe se aquela conta foi paga.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem usa planilha mas não consegue manter</h3><p>A fórmula quebra, a semana fica corrida e o controle vai ficando para depois.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem tem tudo espalhado</h3><p>Nota no celular, print do extrato, boleto na galeria e app do banco que não soma nada.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem chega no fim do mês sem entender</h3><p>Mesmo trabalhando e ganhando bem, o dinheiro parece sumir sem explicação.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem não quer virar especialista</h3><p>Sem fórmula, sem contabilidade, sem horas por semana. Só abrir, lançar e entender.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Autônomos, MEIs e pequenos negócios</h3><p>Vida pessoal e empresa em perfis separados, sem misturar as contas.</p></div>
+      <div class="fcard rv"><h3>Quem anota no caderno ou no papel</h3><p>E perde a folha, esquece de lançar ou não sabe se aquela conta foi paga.</p></div>
+      <div class="fcard rv"><h3>Quem usa planilha mas não consegue manter</h3><p>A fórmula quebra, a semana fica corrida e o controle vai ficando para depois.</p></div>
+      <div class="fcard rv"><h3>Quem tem tudo espalhado</h3><p>Nota no celular, print do extrato, boleto na galeria e app do banco que não soma nada.</p></div>
+      <div class="fcard rv"><h3>Quem chega no fim do mês sem entender</h3><p>Mesmo trabalhando e ganhando bem, o dinheiro parece sumir sem explicação.</p></div>
+      <div class="fcard rv"><h3>Quem não quer virar especialista</h3><p>Sem fórmula, sem contabilidade, sem horas por semana. Só abrir, lançar e entender.</p></div>
+      <div class="fcard rv"><h3>Autônomos, MEIs e pequenos negócios</h3><p>Vida pessoal e empresa em perfis separados, sem misturar as contas.</p></div>
     </div>
   </div>
 </section>
@@ -596,14 +556,13 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec" id="pilares">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Os 4 pilares do Dashboard</p>
       <h2>O que muda <span class="grad">no seu dia a dia.</span></h2>
     </div>
     <div class="steps4">
-      <div class="step rv"><span class="big" aria-hidden="true">1</span><span class="n">01</span><h3>Clareza imediata</h3><p>Ao abrir, você já vê saldo, receitas, despesas, lucro, metas e gráficos numa única tela.</p></div>
-      <div class="step rv"><span class="big" aria-hidden="true">2</span><span class="n">02</span><h3>Organização sem esforço</h3><p>Lançamentos rápidos, importação de faturas e categorias organizadas sozinhas.</p></div>
-      <div class="step rv"><span class="big" aria-hidden="true">3</span><span class="n">03</span><h3>Presente e futuro</h3><p>Lançamentos futuros, parcelas, metas e histórico para planejar antes da surpresa.</p></div>
-      <div class="step rv"><span class="big" aria-hidden="true">4</span><span class="n">04</span><h3>Em qualquer lugar</h3><p>Funciona no navegador e salva tudo na nuvem. A organização acompanha a sua rotina.</p></div>
+      <div class="step rv"><h3>Clareza imediata</h3><p>Ao abrir, você já vê saldo, receitas, despesas, lucro, metas e gráficos numa única tela.</p></div>
+      <div class="step rv"><h3>Organização sem esforço</h3><p>Lançamentos rápidos, importação de faturas e categorias organizadas sozinhas.</p></div>
+      <div class="step rv"><h3>Presente e futuro</h3><p>Lançamentos futuros, parcelas, metas e histórico para planejar antes da surpresa.</p></div>
+      <div class="step rv"><h3>Em qualquer lugar</h3><p>Funciona no navegador e salva tudo na nuvem.</p></div>
     </div>
   </div>
 </section>
@@ -612,18 +571,17 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec soft" id="celular">
   <div class="wrap cel">
     <div class="txt rv">
-      <p class="kicker">Vai com você</p>
       <h2>Recebeu um pix na rua? <span class="grad">Lança na hora.</span></h2>
       <p>A maioria dos gastos acontece fora de casa. Pelo celular você registra na hora, antes do “depois eu anoto” virar esquecimento.</p>
       <ul class="lista">
-        <li><span class="chk"><svg><use href="#v"/></svg></span>Funciona liso no celular, no tablet e no computador</li>
-        <li><span class="chk"><svg><use href="#v"/></svg></span>Tudo sincronizado e salvo na nuvem</li>
-        <li><span class="chk"><svg><use href="#v"/></svg></span>Nada para instalar: abre direto no navegador</li>
+        <li>Funciona liso no celular, no tablet e no computador</li>
+        <li>Tudo sincronizado e salvo na nuvem</li>
+        <li>Nada para instalar. Abre direto no navegador</li>
       </ul>
     </div>
     <div class="platform rv">
-      <span class="tag t1">📱 Lançou no celular</span>
-      <span class="tag t2">✓ Já aparece no computador</span>
+      <span class="tag t1">Lançou no celular</span>
+      <span class="tag t2">Já aparece no computador</span>
       <div class="frame"><img src="assets/img/produto-azul.webp?v=2" alt="Dashboard Financeiro aberto no tablet e no celular" loading="lazy" width="1600" height="1106"></div>
     </div>
   </div>
@@ -633,15 +591,14 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec" id="importacao">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Importação em massa</p>
       <h2>Chega de lançar <span class="grad">gasto por gasto.</span></h2>
       <p>Importe o extrato ou a fatura e só revise. Em menos de 1 minuto, o mês inteiro está organizado.</p>
     </div>
     <div class="imp">
       <div class="cards">
-        <div class="icard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></div><div><h3>Extrato bancário</h3><p>Suba o extrato e o Dashboard organiza tudo por categoria. Você só confere e confirma.</p></div></div>
-        <div class="icard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></div><div><h3>Fatura do cartão</h3><p>A fatura fechou? Importe e cada compra é categorizada, parcelas incluídas.</p></div></div>
-        <div class="seguro rv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Você mesma importa o arquivo. Nunca pedimos login, senha ou acesso ao seu banco.</div>
+        <div class="icard rv"><div><h3>Extrato bancário</h3><p>Suba o extrato e o Dashboard organiza tudo por categoria. Você só confere e confirma.</p></div></div>
+        <div class="icard rv"><div><h3>Fatura do cartão</h3><p>A fatura fechou? Importe e cada compra é categorizada, parcelas incluídas.</p></div></div>
+        <div class="seguro rv">Você mesma importa o arquivo. Nunca pedimos login, senha ou acesso ao seu banco.</div>
       </div>
       <div class="revisar rv" id="revisar">
         <div class="tt"><b>Revisar lançamentos</b><small>fatura-outubro.pdf</small></div>
@@ -664,16 +621,15 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec soft" id="recursos">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Por que é diferente das planilhas</p>
-      <h2>Cada recurso existe para <span class="grad">eliminar um atrito.</span></h2>
+      <h2>Por que é diferente <span class="grad">das planilhas.</span></h2>
     </div>
     <div class="fgrid">
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>Importação segura</h3><p>Você importa o extrato ou a fatura em poucos cliques, e seus dados ficam sob o seu controle.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div><h3>Múltiplos perfis</h3><p>Vida pessoal e negócio separados, na mesma conta. Ideal para autônomos e MEIs.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Gráficos que ajudam a decidir</h3><p>Despesas por categoria e receita x despesa mês a mês, sem montar um gráfico sequer.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div><h3>Metas que acompanham você</h3><p>Defina metas e veja quanto já avançou. Decisão baseada em dado, não em achismo.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><h3>Relatórios em PDF</h3><p>Relatório mensal ou anual pronto em segundos, sem montar documento na mão.</p></div>
-      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Parcelas e contas futuras</h3><p>Parcelas e lançamentos futuros já entram no planejamento, sem surpresa no mês seguinte.</p></div>
+      <div class="fcard rv"><h3>Importação segura</h3><p>Você importa o extrato ou a fatura em poucos cliques, e seus dados ficam sob o seu controle.</p></div>
+      <div class="fcard rv"><h3>Múltiplos perfis</h3><p>Vida pessoal e negócio separados, na mesma conta. Ideal para autônomos e MEIs.</p></div>
+      <div class="fcard rv"><h3>Gráficos que ajudam a decidir</h3><p>Despesas por categoria e receita x despesa mês a mês, sem montar um gráfico sequer.</p></div>
+      <div class="fcard rv"><h3>Metas que acompanham você</h3><p>Defina metas e veja quanto já avançou.</p></div>
+      <div class="fcard rv"><h3>Relatórios em PDF</h3><p>Relatório mensal ou anual pronto em segundos, sem montar documento na mão.</p></div>
+      <div class="fcard rv"><h3>Parcelas e contas futuras</h3><p>Parcelas e lançamentos futuros já entram no planejamento, sem surpresa no mês seguinte.</p></div>
     </div>
   </div>
 </section>
@@ -682,14 +638,13 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec" id="recebe">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">O que vem na assinatura</p>
-      <h2>Não é só um painel. <span class="grad">É o pacote completo.</span></h2>
+      <h2>O que vem <span class="grad">na assinatura.</span></h2>
     </div>
     <div class="entregas">
-      <div class="entrega rv"><div><span class="k">Painel</span><h3>Dashboard Financeiro completo</h3><p>Saldo, receitas, despesas, cartões, metas e gráficos num único lugar, no computador e no celular.</p></div><div class="vis"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="Dashboard Financeiro completo" loading="lazy" width="1300" height="932"></div></div>
-      <div class="entrega rv"><div><span class="k">Perfis</span><h3>Múltiplos perfis financeiros</h3><p>Organize a vida pessoal e o negócio sem misturar as contas.</p></div><div class="vis"><img src="assets/img/offer-perfis-azul.webp?v=2" alt="Troca entre perfil pessoal e profissional" loading="lazy" width="1300" height="932"></div></div>
-      <div class="entrega rv"><div><span class="k">Análise</span><h3>Relatórios, gráficos e metas</h3><p>Veja para onde o dinheiro está indo, acompanhe metas e gere relatórios em PDF.</p></div><div class="vis"><img src="assets/img/offer-relatorios-azul.webp?v=2" alt="Gráficos de receitas, despesas e comparativo mensal" loading="lazy" width="1300" height="932"></div></div>
-      <div class="entrega rv"><div><span class="k">Importação</span><h3>Extratos e faturas em poucos cliques</h3><p>Chega de lançar tudo à mão: importe, revise e mantenha o controle sempre atualizado.</p></div><div class="vis"><img src="assets/img/offer-importacao-azul.webp?v=2" alt="Tela de revisão de lançamentos importados" loading="lazy" width="1300" height="932"></div></div>
+      <div class="entrega rv"><div><h3>Dashboard Financeiro completo</h3><p>Saldo, receitas, despesas, cartões, metas e gráficos num único lugar, no computador e no celular.</p></div><div class="vis"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="Dashboard Financeiro completo" loading="lazy" width="1300" height="932"></div></div>
+      <div class="entrega rv"><div><h3>Múltiplos perfis financeiros</h3><p>Organize a vida pessoal e o negócio sem misturar as contas.</p></div><div class="vis"><img src="assets/img/offer-perfis-azul.webp?v=2" alt="Troca entre perfil pessoal e profissional" loading="lazy" width="1300" height="932"></div></div>
+      <div class="entrega rv"><div><h3>Relatórios, gráficos e metas</h3><p>Veja para onde o dinheiro está indo, acompanhe metas e gere relatórios em PDF.</p></div><div class="vis"><img src="assets/img/offer-relatorios-azul.webp?v=2" alt="Gráficos de receitas, despesas e comparativo mensal" loading="lazy" width="1300" height="932"></div></div>
+      <div class="entrega rv"><div><h3>Extratos e faturas em poucos cliques</h3><p>Chega de lançar tudo à mão. Importe, revise e mantenha o controle sempre atualizado.</p></div><div class="vis"><img src="assets/img/offer-importacao-azul.webp?v=2" alt="Tela de revisão de lançamentos importados" loading="lazy" width="1300" height="932"></div></div>
     </div>
   </div>
 </section>
@@ -698,16 +653,15 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec soft" id="depoimentos">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Quem já usa</p>
       <h2>O que estão dizendo <span class="grad">do Dashboard.</span></h2>
     </div>
     <div class="rgrid">
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">simmm 🤓 passei o fds organizando todo o dashboard!! muito obrigado por compartilhar ele, bem prático e intuitivo pra organizar o financeiro =)<span class="rx">❤️</span></div></div></article>
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e é muito bom viu 🤍<br>Amei! Melhor investimento!!</div></div></article>
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/></svg></span><span><b>WhatsApp</b></span><time>20:06</time></div><div class="msg" style="align-items:flex-start"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bubs" style="padding-left:0"><div class="bub">só passando para dizer que to amandooooo<small>20:06</small></div><div class="bub">bem mais fácil de controlar as contas kk<small>20:06</small></div><div class="bub">nunca dou certo com nada, nem planilha ou papel<small>20:06</small></div><div class="bub">e do jeito que você fez ficou super pratico<small>20:06</small></div><div class="bub">parabens<small>20:06</small></div></div></div></article>
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e amei 🥰</div></div></article>
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · comentário no post</span><time>8h</time></div><div class="cmt"><span class="av">B</span><div style="flex:1"><p><b>brunahndesign</b> comentou: ameeeei, já garanti o meu 💖</p><div class="acts"><span>❤️ Curtir</span><span>Visualizar resposta</span></div></div><span class="thumb"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></span></div></article>
-      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/></svg></span><span><b>WhatsApp</b> · +55 45 •••••</span><time>Hoje</time></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">então, já faz um tempo que venho testando váriasssss ferramentas de organização financeira e posso dizer que a sua é uma das melhores até agora<small>19:08</small></div></div></article>
+      <article class="res rv"><div class="src"><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">simmm 🤓 passei o fds organizando todo o dashboard!! muito obrigado por compartilhar ele, bem prático e intuitivo pra organizar o financeiro =)<span class="rx">❤️</span></div></div></article>
+      <article class="res rv"><div class="src"><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e é muito bom viu 🤍<br>Amei! Melhor investimento!!</div></div></article>
+      <article class="res rv"><div class="src"><span><b>WhatsApp</b></span><time>20:06</time></div><div class="msg" style="align-items:flex-start"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bubs" style="padding-left:0"><div class="bub">só passando para dizer que to amandooooo<small>20:06</small></div><div class="bub">bem mais fácil de controlar as contas kk<small>20:06</small></div><div class="bub">nunca dou certo com nada, nem planilha ou papel<small>20:06</small></div><div class="bub">e do jeito que você fez ficou super pratico<small>20:06</small></div><div class="bub">parabens<small>20:06</small></div></div></div></article>
+      <article class="res rv"><div class="src"><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e amei 🥰</div></div></article>
+      <article class="res rv"><div class="src"><span><b>Instagram</b> · comentário no post</span><time>8h</time></div><div class="cmt"><span class="av">B</span><div style="flex:1"><p><b>brunahndesign</b> comentou: ameeeei, já garanti o meu 💖</p><div class="acts"><span>❤️ Curtir</span><span>Visualizar resposta</span></div></div><span class="thumb"><img src="assets/img/offer-dashboard-azul.webp?v=2" alt="" loading="lazy" width="1300" height="932"></span></div></article>
+      <article class="res rv"><div class="src"><span><b>WhatsApp</b> · +55 45 •••••</span><time>Hoje</time></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">então, já faz um tempo que venho testando váriasssss ferramentas de organização financeira e posso dizer que a sua é uma das melhores até agora<small>19:08</small></div></div></article>
     </div>
     <p class="res-note rv">Mensagens reais de clientes, redesenhadas no visual da página.</p>
   </div>
@@ -717,36 +671,31 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="offer" id="comprar">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Plano anual</p>
-      <h2>Comece hoje a enxergar <span class="grad">suas finanças com clareza.</span></h2>
+      <h2>Assine o <span class="grad">plano anual.</span></h2>
     </div>
     <div class="obox">
       <div class="inc-card rv">
-        <span class="k">Tudo o que está incluído</span>
-        <h3>Um painel. Toda a sua vida financeira.</h3>
+        <h3>Tudo o que está incluído</h3>
         <ul class="inc">
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Dashboard completo, sempre atualizado</li>
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Importação de extratos e faturas</li>
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Múltiplos perfis (pessoal e negócio)</li>
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Gráficos, metas e relatórios em PDF</li>
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Funciona no computador e no celular</li>
-          <li><span class="chk"><svg><use href="#v"/></svg></span>Todas as funções novas do ano incluídas</li>
+          <li>Dashboard completo, sempre atualizado</li>
+          <li>Importação de extratos e faturas</li>
+          <li>Múltiplos perfis (pessoal e negócio)</li>
+          <li>Gráficos, metas e relatórios em PDF</li>
+          <li>Funciona no computador e no celular</li>
+          <li>Todas as funções novas do ano incluídas</li>
         </ul>
-        <div class="note"><span class="mark" aria-hidden="true">$</span>Acesso chega no seu e-mail logo após a compra.</div>
+        <div class="note">Acesso chega no seu e-mail logo após a compra.</div>
       </div>
       <div class="price rv">
-        <div class="badge">🔥 +70% de desconto</div>
-        <span class="lbl">Plano anual</span>
+        <div class="badge">+70% de desconto</div>
         <p class="de">de <s>R$29,90/mês</s></p>
         <p class="val"><small>R$</small>7,90<span class="mes">/mês</span></p>
         <p class="unico">pagamento único de <b>R$76,35</b> por 12 meses de acesso</p>
-        <span class="eco">✓ Você economiza R$282,45 no ano</span>
-        <a class="btn" href="https://pay.kiwify.com.br/xdxSBKU">Quero meu Dashboard por R$7,90/mês <span class="arr">→</span></a>
-        <div class="secure"><span>🔒 Compra segura</span><span>Acesso imediato</span><span>7 dias de garantia</span></div>
+        <span class="eco">Você economiza R$282,45 no ano</span>
+        <a class="btn" href="https://pay.kiwify.com.br/xdxSBKU">Quero meu Dashboard por R$7,90/mês</a>
       </div>
     </div>
     <p class="mensal rv">Prefere pagar mês a mês? <a href="https://pay.kiwify.com.br/JTbi7bF">Ver plano mensal de R$29,90</a></p>
-    <p class="banco rv">🔒 Não conectamos ao seu banco. Você importa os extratos e seus dados ficam sob o seu controle.</p>
   </div>
 </section>
 
@@ -770,7 +719,6 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         </svg>
       </div>
       <div>
-        <p class="kicker">Garantia</p>
         <h2>Você tem 7 dias para testar <span class="grad">sem risco.</span></h2>
         <p>Use o Dashboard, importe um extrato e veja o seu mês organizado. Se por qualquer motivo não for para você, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor, sem burocracia.</p>
         <div class="steps3">
@@ -787,9 +735,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <section class="sec faq" id="faq">
   <div class="wrap grid">
     <div class="left rv">
-      <p class="kicker">Perguntas frequentes</p>
       <h2>Antes de assinar,<br>vale saber.</h2>
-      <p>Ficou alguma dúvida? Chama no WhatsApp.</p>
       <a class="btn ghost" href="https://wa.me/5541999401055" target="_blank" rel="noopener">Falar no WhatsApp <span class="arr">↗</span></a>
     </div>
     <div>
@@ -798,14 +744,14 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         <details class="qa"><summary>Não tenho nenhum conhecimento prévio. Consigo usar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, o Dashboard foi feito para ser simples desde o primeiro acesso.</p></div></div></details>
         <details class="qa"><summary>O Dashboard se conecta com a minha conta do banco?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Não. Por segurança, nunca pedimos login, senha ou acesso à sua conta bancária. Você mesma importa o extrato ou a fatura, em poucos cliques.</p></div></div></details>
         <details class="qa"><summary>Como funciona o plano anual?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Você faz um pagamento único de R$76,35 e tem 12 meses de acesso ao Dashboard completo, com todas as funções novas do ano. Sai por menos de R$7,90 por mês, mais de 70% abaixo do plano mensal de R$29,90.</p></div></div></details>
-        <details class="qa"><summary>Existe plano mensal?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, por R$29,90 por mês, sem fidelidade e sem multa: você pode cancelar quando quiser. O acesso é o mesmo do plano anual.</p></div></div></details>
+        <details class="qa"><summary>Existe plano mensal?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, por R$29,90 por mês, sem fidelidade e sem multa. Você pode cancelar quando quiser. O acesso é o mesmo do plano anual.</p></div></div></details>
         <details class="qa"><summary>Como recebo meu acesso?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Assim que o pagamento é aprovado, você recebe o acesso por e-mail em poucos minutos, com o passo a passo para começar.</p></div></div></details>
         <details class="qa"><summary>O pagamento é seguro?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim. O pagamento é processado pela Kiwify, uma plataforma segura e criptografada. Seus dados de pagamento nunca passam por nós.</p></div></div></details>
         <details class="qa"><summary>E se eu não gostar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Você tem 7 dias de garantia incondicional. Se não for para você, é só pedir o reembolso, sem burocracia.</p></div></div></details>
       </div>
       <div class="support rv">
         <p>Ainda ficou com dúvida?</p>
-        <a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Fale com o suporte no WhatsApp →</a>
+        <a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Fale com o suporte no WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
@@ -814,11 +760,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 <!-- Encerramento -->
 <section class="closing" id="comece">
   <div class="wrap">
-    <p class="kicker rv">O próximo passo é seu</p>
-    <h2 class="rv">Seu dinheiro, claro<br>em <span class="grad">menos de 10 segundos.</span></h2>
-    <p class="rv">Saldo, gastos, receitas, metas e gráficos num painel só. Sem planilha e sem fórmula, por menos de R$8 por mês.</p>
-    <a class="btn rv" href="#comprar">Quero meu Dashboard <span class="arr">↗</span></a>
-    <p class="note rv">7 dias de garantia incondicional.</p>
+    <h2 class="rv">Entenda seu dinheiro<br>em <span class="grad">menos de 10 segundos.</span></h2>
+    <a class="btn rv" href="#comprar">Quero meu Dashboard</a>
   </div>
 </section>
 
@@ -833,9 +776,9 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
         <p>Um painel visual para entender sua vida financeira em segundos.</p>
       </div>
       <div><h4>Dashboard</h4><ul><li><a href="#comprar">Assinar</a></li><li><a href="https://docs.google.com/document/d/1nTM8njyugzgFsqLTX_Selr1AcGhyU-b_VIpJMPb0Lxg/view" target="_blank" rel="noopener">Termos de Uso e Privacidade</a></li><li><a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Suporte no WhatsApp</a></li></ul></div>
-      <div class="inv"><p>Mais clareza.<br>Mais controle.<br><span>Mais você.</span></p><a href="#comprar">Quero o Dashboard <span aria-hidden="true">↗</span></a></div>
+      <div class="inv"><a href="#comprar">Quero o Dashboard</a></div>
     </div>
-    <div class="bottom"><span>© 2026 Dashboard Financeiro · Todos os direitos reservados</span><a href="#topo">Voltar ao topo ↑</a></div>
+    <div class="bottom"><span>© 2026 Dashboard Financeiro · Todos os direitos reservados</span><a href="#topo">Voltar ao topo</a></div>
   </div>
 </footer>
 

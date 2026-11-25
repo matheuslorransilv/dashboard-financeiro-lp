@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard Financeiro · Entenda sua vida financeira em segundos | Lari Tedeschi</title>
+<title>Dashboard Financeiro · Entenda sua vida financeira em segundos</title>
 <meta name="description" content="Um painel visual que mostra saldo, gastos, receitas, metas e gráficos automaticamente, no computador e no celular. Sem planilha e sem fórmula.">
 <meta name="theme-color" content="#f7fbff">
 <meta property="og:type" content="website">
@@ -268,8 +268,38 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 
 /* ---------- Depoimentos ---------- */
 .rgrid{columns:3;column-gap:18px}
-.res{break-inside:avoid;margin:0 0 18px;padding:10px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
-.res img{border-radius:16px;width:100%;height:auto}
+.res{break-inside:avoid;margin:0 0 18px;padding:22px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.res .src{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:13px;color:var(--muted)}
+.res .src .ch{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--blue-soft);color:var(--blue);flex:none}
+.res .src .ch svg{width:16px;height:16px}
+.res .src b{color:var(--ink);font-weight:700}
+.res .src time{margin-left:auto;font-size:12px;color:var(--muted-2)}
+.story{position:relative;width:132px;aspect-ratio:9/15.5;border-radius:16px;overflow:hidden;margin:0 0 14px 16px;background:radial-gradient(120% 80% at 50% 0%,#5f9dff 0%,#1a5ef0 45%,#0631b5 100%);box-shadow:0 10px 24px #1a5ef033}
+.story::before{content:"";position:absolute;left:-16px;top:0;bottom:0;width:3px;border-radius:3px;background:#dbe6f6}
+.story .scr{position:absolute;left:10px;right:10px;top:24%;border-radius:6px;overflow:hidden;background:#fff;border:3px solid #0d1630;box-shadow:0 8px 18px #04249a66}
+.story .scr img{width:100%;height:54px;object-fit:cover;object-position:left top}
+.story .ft{position:absolute;left:8px;right:8px;bottom:12px;text-align:center;color:#fff;font-size:7.5px;font-weight:700;line-height:1.35}
+.story .stk{display:inline-block;margin-top:6px;padding:3px 6px;border-radius:5px;background:#fff;color:var(--blue);font-size:6.5px;letter-spacing:.3px}
+.story .lg{position:absolute;left:0;right:0;top:10%;text-align:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.msg{display:flex;align-items:flex-end;gap:10px}
+.av{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:var(--grad-btn);color:#fff;font-size:12px;font-weight:700;box-shadow:0 6px 14px #397cfa33}
+.av.lt{background:linear-gradient(140deg,#dbe9ff,#a9c8ff);color:#1d4fae}
+.bub{position:relative;padding:12px 15px;border-radius:18px 18px 18px 6px;background:var(--blue-soft);font-size:15.5px;line-height:1.5;color:var(--ink)}
+.bub small{float:right;font-size:11px;color:var(--muted-2);margin:8px 0 -4px 12px;line-height:1}
+.bub .rx{position:absolute;left:12px;bottom:-14px;padding:2px 6px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:12px;line-height:1.3}
+.bubs{display:grid;gap:6px;justify-items:start}
+.bubs .bub{border-radius:18px}
+.bubs .bub:last-child{border-radius:18px 18px 18px 6px}
+.res .bubs{padding-left:44px}
+.cmt{display:flex;gap:12px;align-items:flex-start}
+.cmt p{margin:0;font-size:15.5px;line-height:1.5}
+.cmt p b{font-weight:700}
+.cmt p time{color:var(--muted-2);font-size:13px;margin-left:4px}
+.cmt .acts{display:flex;gap:8px;margin-top:10px}
+.cmt .acts span{padding:6px 12px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line);font-size:12.5px;color:var(--ink-2)}
+.cmt .thumb{flex:none;width:52px;height:52px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.cmt .thumb img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.res-note{text-align:center;font-size:13px;color:var(--muted-2);margin:22px 0 0}
 
 
 /* ---------- Oferta ---------- */
@@ -346,7 +376,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 
 /* ---------- Rodapé ---------- */
 .foot{position:relative;overflow:hidden;padding:90px 0 36px;background:linear-gradient(180deg,#fff,var(--bg-soft));border-top:1px solid #edf2fa}
-.foot .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;gap:40px}
+.foot .cols{display:grid;grid-template-columns:1.3fr 1fr 1.1fr;gap:40px}
 .foot .fb{display:flex;align-items:center;gap:12px;font-size:24px;white-space:nowrap;font-weight:700;letter-spacing:-.04em}
 .foot .fb .orb-mini{width:40px;height:40px}
 .foot .fb b{color:var(--blue)}
@@ -693,13 +723,14 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
       <h2>O que estão dizendo <span class="grad">do Dashboard.</span></h2>
     </div>
     <div class="rgrid">
-      <article class="res rv"><img src="assets/img/depoimento-1.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="658"></article>
-      <article class="res rv"><img src="assets/img/depoimento-2.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="615"></article>
-      <article class="res rv"><img src="assets/img/depoimento-4.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="621"></article>
-      <article class="res rv"><img src="assets/img/depoimento-5.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="756"></article>
-      <article class="res rv"><img src="assets/img/depoimento-3.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="168"></article>
-      <article class="res rv"><img src="assets/img/depoimento-6.webp" alt="Depoimento de cliente sobre o Dashboard Financeiro" loading="lazy" width="800" height="498"></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">simmm 🤓 passei o fds organizando todo o dashboard!! muito obrigado por compartilhar ele, bem prático e intuitivo pra organizar o financeiro =)<span class="rx">❤️</span></div></div></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e é muito bom viu 🤍<br>Amei! Melhor investimento!!</div></div></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/></svg></span><span><b>WhatsApp</b></span><time>20:06</time></div><div class="msg" style="align-items:flex-start"><span class="av" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bubs" style="padding-left:0"><div class="bub">só passando para dizer que to amandooooo<small>20:06</small></div><div class="bub">bem mais fácil de controlar as contas kk<small>20:06</small></div><div class="bub">nunca dou certo com nada, nem planilha ou papel<small>20:06</small></div><div class="bub">e do jeito que você fez ficou super pratico<small>20:06</small></div><div class="bub">parabens<small>20:06</small></div></div></div></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · respondeu ao story</span></div><div class="story" aria-hidden="true"><span class="lg">dashboard<br>financeiro</span><div class="scr"><img src="assets/img/offer-dashboard-azul.webp" alt="" loading="lazy" width="1300" height="932"></div><div class="ft">Segunda é dia oficial da organização!<br>E aí, já organizou sua vida financeira?<br><span class="stk">🔗 MEU DASHBOARD FINANCEIRO</span></div></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">Eu comprei e amei 🥰</div></div></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span><b>Instagram</b> · comentário no post</span><time>8h</time></div><div class="cmt"><span class="av">B</span><div style="flex:1"><p><b>brunahndesign</b> comentou: ameeeei, já garanti o meu 💖</p><div class="acts"><span>❤️ Curtir</span><span>Visualizar resposta</span></div></div><span class="thumb"><img src="assets/img/offer-dashboard-azul.webp" alt="" loading="lazy" width="1300" height="932"></span></div></article>
+      <article class="res rv"><div class="src"><span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/></svg></span><span><b>WhatsApp</b> · +55 45 •••••</span><time>Hoje</time></div><div class="msg"><span class="av lt" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="bub">então, já faz um tempo que venho testando váriasssss ferramentas de organização financeira e posso dizer que a sua é uma das melhores até agora<small>19:08</small></div></div></article>
     </div>
+    <p class="res-note rv">Mensagens reais de clientes, redesenhadas no visual da página.</p>
   </div>
 </section>
 
@@ -785,7 +816,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
     <div>
       <div class="list">
         <details class="qa" open><summary>O Dashboard funciona para qualquer pessoa?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim. Funciona para quem já tenta se organizar e quer parar de sofrer com planilha, e para quem nunca conseguiu manter nenhum controle. A interface é visual e não exige conhecimento técnico.</p></div></div></details>
-        <details class="qa"><summary>Não tenho nenhum conhecimento prévio. Consigo usar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, o Dashboard foi feito para ser simples desde o primeiro acesso. Se quiser aprender ainda mais rápido, as aulas completas em vídeo estão disponíveis como adicional no checkout.</p></div></div></details>
+        <details class="qa"><summary>Não tenho nenhum conhecimento prévio. Consigo usar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, o Dashboard foi feito para ser simples desde o primeiro acesso.</p></div></div></details>
         <details class="qa"><summary>O Dashboard se conecta com a minha conta do banco?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Não. Por segurança, nunca pedimos login, senha ou acesso à sua conta bancária. Você mesma importa o extrato ou a fatura, em poucos cliques.</p></div></div></details>
         <details class="qa"><summary>Como funciona o plano anual?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Você faz um pagamento único de R$76,35 e tem 12 meses de acesso ao Dashboard completo, com todas as funções novas do ano. Sai por menos de R$7,90 por mês, mais de 70% abaixo do plano mensal de R$29,90.</p></div></div></details>
         <details class="qa"><summary>Existe plano mensal?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><div><p>Sim, por R$29,90 por mês, sem fidelidade e sem multa: você pode cancelar quando quiser. O acesso é o mesmo do plano anual.</p></div></div></details>
@@ -822,13 +853,12 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.25}
     <div class="cols">
       <div>
         <a class="fb" href="#topo"><span class="orb orb-mini" aria-hidden="true"></span><span><b>Dashboard</b> Financeiro</span></a>
-        <p>Um painel visual para entender sua vida financeira em segundos. Criado por Lari Tedeschi.</p>
+        <p>Um painel visual para entender sua vida financeira em segundos.</p>
       </div>
       <div><h4>Dashboard</h4><ul><li><a href="#comprar">Assinar</a></li><li><a href="https://docs.google.com/document/d/1nTM8njyugzgFsqLTX_Selr1AcGhyU-b_VIpJMPb0Lxg/view" target="_blank" rel="noopener">Termos de Uso e Privacidade</a></li><li><a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Suporte no WhatsApp</a></li></ul></div>
-      <div><h4>Lari Tedeschi</h4><ul><li><a href="https://laritedeschi.com" target="_blank" rel="noopener">Cursos e produtos</a></li><li><a href="https://www.instagram.com/laritedeschi" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@laritedeschi" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div class="inv"><p>Mais clareza.<br>Mais controle.<br><span>Mais você.</span></p><a href="#comprar">Quero o Dashboard <span aria-hidden="true">↗</span></a></div>
     </div>
-    <div class="bottom"><span>© 2026 Dashboard Financeiro · Lari Tedeschi · Todos os direitos reservados</span><a href="#topo">Voltar ao topo ↑</a></div>
+    <div class="bottom"><span>© 2026 Dashboard Financeiro · Todos os direitos reservados</span><a href="#topo">Voltar ao topo ↑</a></div>
   </div>
 </footer>
 

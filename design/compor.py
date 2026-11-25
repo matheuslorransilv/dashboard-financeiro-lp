@@ -34,3 +34,8 @@ for i in range(26):
 b.alpha_composite(sombra, (944, 241))
 tela(b, 'phone-prod', 987, 167, 339, 739, 40)
 b.save(f'{OUT}/produto-azul.webp', quality=92, method=6)
+
+# hero: MacBook
+h = Image.open(f'{ORIG}/hero.webp').convert('RGBA')
+h.paste(Image.open(f'{R}/hero-tela.png').convert('RGBA').resize((1334, 834), L), (233, 120))
+h.save(f'{OUT}/hero-azul.webp', quality=92, method=6)
